@@ -24,8 +24,11 @@ class GetUsersModel: ObservableObject{
                 return
             }
             documentSnapshot?.documents.forEach({ snapshot in
-                let data = snapshot.data() 
-                self.users.append(.init(data: data))
+                let data = snapshot.data()
+                let user = ChatUser(data: data)
+                if user.userId != FirebaseManager.shared.auth.currentUser?.uid{
+                    self.users.append(.init(data: data))
+                }
             })
         }
     }
