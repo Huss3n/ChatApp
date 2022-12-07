@@ -8,6 +8,8 @@
 import SwiftUI
 struct ChatView: View {
     @ObservedObject var vm = ChatViewModel()
+    @State var showNewMessageScreen = false
+    
     var body: some View {
         VStack{
             TopBarView()
@@ -19,7 +21,8 @@ struct ChatView: View {
             .scrollIndicators(.hidden)
             .overlay(
                 Button(action: {
-                    //
+                    // present new message screen
+                    showNewMessageScreen.toggle()
                 }, label: {
                     Text("+ New message")
                         .font(.body).bold()
@@ -30,6 +33,9 @@ struct ChatView: View {
                         .shadow(color: .gray, radius: 10, x: 0, y: 0)
                 }), alignment: .bottom
             )
+            .fullScreenCover(isPresented: $showNewMessageScreen) {
+                NewMessageView()
+            }
         }
     }
 }
