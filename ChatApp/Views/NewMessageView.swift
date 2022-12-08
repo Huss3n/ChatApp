@@ -10,9 +10,12 @@ import SDWebImageSwiftUI
 
 
 struct NewMessageView: View {
+    let didSelectNewUser: (ChatUser) -> ()
+    
     @ObservedObject var getUsersVm = GetUsersModel()
     @ObservedObject var vm = ChatViewModel()
     @Environment(\.dismiss) var dismiss
+    @State var shouldNavigateToSendMessageView = false
     
     var body: some View {
         NavigationStack{
@@ -21,6 +24,9 @@ struct NewMessageView: View {
                 ForEach(getUsersVm.users) { user in
                     Button {
                         //
+//                        ChatsView()
+                        didSelectNewUser(user)
+                        self.shouldNavigateToSendMessageView.toggle()
                     } label: {
                         HStack{
                             WebImage(url:URL(string: user.profileImageURL))
@@ -55,6 +61,8 @@ struct NewMessageView: View {
 
 struct NewMessageView_Previews: PreviewProvider {
     static var previews: some View {
-        NewMessageView()
+        NewMessageView(didSelectNewUser: { user in
+            print(user.email)
+        })
     }
 }

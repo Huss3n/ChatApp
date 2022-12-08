@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D76AD0B92941E4F1002EF5B9 /* ChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76AD0B82941E4F1002EF5B9 /* ChatsView.swift */; };
 		D785E5682940B6D900B51E9E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785E5672940B6D900B51E9E /* ImagePicker.swift */; };
 		D785E56B2940D3DF00B51E9E /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785E56A2940D3DF00B51E9E /* ChatView.swift */; };
 		D785E56E2940E5DD00B51E9E /* TopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785E56D2940E5DD00B51E9E /* TopBarView.swift */; };
-		D785E5702940E8DC00B51E9E /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785E56F2940E8DC00B51E9E /* MessagesView.swift */; };
+		D785E5702940E8DC00B51E9E /* UsernameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785E56F2940E8DC00B51E9E /* UsernameView.swift */; };
 		D7AFB532294095580027AA67 /* ChatAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AFB531294095580027AA67 /* ChatAppApp.swift */; };
 		D7AFB534294095580027AA67 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AFB533294095580027AA67 /* LoginView.swift */; };
 		D7AFB5362940955A0027AA67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7AFB5352940955A0027AA67 /* Assets.xcassets */; };
@@ -29,10 +30,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D76AD0B82941E4F1002EF5B9 /* ChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsView.swift; sourceTree = "<group>"; };
 		D785E5672940B6D900B51E9E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		D785E56A2940D3DF00B51E9E /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		D785E56D2940E5DD00B51E9E /* TopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarView.swift; sourceTree = "<group>"; };
-		D785E56F2940E8DC00B51E9E /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
+		D785E56F2940E8DC00B51E9E /* UsernameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameView.swift; sourceTree = "<group>"; };
 		D7AFB52E294095580027AA67 /* ChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7AFB531294095580027AA67 /* ChatAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAppApp.swift; sourceTree = "<group>"; };
 		D7AFB533294095580027AA67 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -77,8 +79,9 @@
 				D7AFB533294095580027AA67 /* LoginView.swift */,
 				D785E56A2940D3DF00B51E9E /* ChatView.swift */,
 				D785E56D2940E5DD00B51E9E /* TopBarView.swift */,
-				D785E56F2940E8DC00B51E9E /* MessagesView.swift */,
+				D785E56F2940E8DC00B51E9E /* UsernameView.swift */,
 				D7BD0D75294145A500CFDC36 /* NewMessageView.swift */,
+				D76AD0B82941E4F1002EF5B9 /* ChatsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -213,11 +216,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D76AD0B92941E4F1002EF5B9 /* ChatsView.swift in Sources */,
 				D7BD0D7229413F7100CFDC36 /* ChatUser.swift in Sources */,
 				D785E56E2940E5DD00B51E9E /* TopBarView.swift in Sources */,
 				D785E56B2940D3DF00B51E9E /* ChatView.swift in Sources */,
 				D7BD0D6C2941238300CFDC36 /* FirebaseManager.swift in Sources */,
-				D785E5702940E8DC00B51E9E /* MessagesView.swift in Sources */,
+				D785E5702940E8DC00B51E9E /* UsernameView.swift in Sources */,
 				D785E5682940B6D900B51E9E /* ImagePicker.swift in Sources */,
 				D7AFB534294095580027AA67 /* LoginView.swift in Sources */,
 				D7BD0D742941408300CFDC36 /* ChatViewModel.swift in Sources */,

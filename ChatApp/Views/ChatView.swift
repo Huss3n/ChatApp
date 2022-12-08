@@ -9,13 +9,16 @@ import SwiftUI
 struct ChatView: View {
     @ObservedObject var vm = ChatViewModel()
     @State var showNewMessageScreen = false
+    @State var chatUser: ChatUser?
     
     var body: some View {
         VStack{
-            TopBarView()
-            ScrollView{
-                ForEach(0..<20, id: \.self){num in
-                    MessagesView()
+            NavigationStack{
+                TopBarView()
+                ScrollView{
+                    ForEach(0..<20, id: \.self){num in
+                        UsernameView()
+                    }
                 }
             }
             .scrollIndicators(.hidden)
@@ -34,7 +37,10 @@ struct ChatView: View {
                 }), alignment: .bottom
             )
             .fullScreenCover(isPresented: $showNewMessageScreen) {
-                NewMessageView()
+                NewMessageView(didSelectNewUser: { user in
+                    print(user.email)
+                    self.chatUser = user
+                })
             }
         }
     }
