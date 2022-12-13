@@ -7,8 +7,10 @@
 
 import SwiftUI
 
-struct ChatsView: View {
+struct MessagesChatView: View {
     @ObservedObject var vm = ChatViewModel()
+//    let chatUser : ChatUser?
+    
     var body: some View {
         NavigationStack{
             ScrollView{
@@ -16,24 +18,13 @@ struct ChatsView: View {
                     Text("Fake messages for now")
                 }
             }
-            .navigationTitle(vm.chatUser?.email ?? "")
+            .navigationTitle("username: \(vm.chatUser?.email ?? "")")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItemGroup(placement: .navigationBarLeading) {
-                    Button {
-                        //
-                    } label: {
-                        Text("< Back")
-                    }
-
-                }
-            }
         }
     }
 }
-
 struct ChatsView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatsView()
+        MessagesChatView()
     }
 }

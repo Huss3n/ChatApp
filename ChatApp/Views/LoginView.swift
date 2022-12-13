@@ -20,7 +20,7 @@ struct LoginView: View {
     @State var showImagePicker = false
     @State var image : UIImage?
     
-   
+    
     var body: some View {
         NavigationStack{
             ScrollView{
@@ -46,18 +46,18 @@ struct LoginView: View {
                                     .frame(width: 100, height: 100)
                                     .clipShape(Circle())
                                     .overlay(Circle().stroke(Color.black, lineWidth: 1))
-                                    
+                                
                             }else{
                                 Image(systemName: "person.fill")
                                     .padding()
                                     .font(.system(size: 100))
                                     .overlay(Circle().stroke(Color.black, lineWidth: 1))
-                              
+                                
                             }
                         }
                     }
                 }
-
+                
                 // user input fields
                 VStack(spacing: 15){
                     TextField("Email", text: $email)
@@ -96,11 +96,11 @@ struct LoginView: View {
                 VStack{
                     Text(isUserLoggedIn ? loginMessage : signUpMessage)
                 }
-                    .multilineTextAlignment(.center)
-                    .font(.caption)
-                    .fontWeight(.semibold)
-                    .foregroundColor(.red)
-
+                .multilineTextAlignment(.center)
+                .font(.caption)
+                .fontWeight(.semibold)
+                .foregroundColor(.red)
+                
                 
             }
             .navigationTitle(isUserLoggedIn ? "Login" : "Create account")
@@ -125,7 +125,7 @@ struct LoginView: View {
                 self.signUpMessage = "Pick a profile image"
                 return
             }
-           registerUser()
+            registerUser()
             self.signUpMessage = "Sign up succcessful"
         }
     }
@@ -155,7 +155,7 @@ struct LoginView: View {
             self.addImageToStorage() // when it registers user it also sends the image to storage
         }
     }
- 
+    
     // function that adds image to storage
     func addImageToStorage(){
         // path is a file name we can ge from uuid
@@ -168,7 +168,7 @@ struct LoginView: View {
                 self.signUpMessage = "Failed to add image to storage  \(err)"
                 return
             }
-//            self.imageMessage = "Image stored successfully"
+            //            self.imageMessage = "Image stored successfully"
             ref.downloadURL { url, error in
                 if let error = error{
                     print(error)
@@ -176,12 +176,12 @@ struct LoginView: View {
                     return
                 }
                 self.signUpMessage = "Successfully stored image with url \(url?.absoluteString ?? "")"
-                
                 // call the store user to db function during storing image to storage
                 guard let url = url else {return}
                 self.storeUserInformation(profileImageURL: url)
             }
         }
+        
     }
     
     // function that stores information
@@ -196,6 +196,7 @@ struct LoginView: View {
             self.signUpMessage = "Successfully added image url to db"
             self.didUserCompleteProcess()
         }
+        
     }
 }
 

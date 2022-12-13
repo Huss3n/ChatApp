@@ -39,9 +39,19 @@ struct ChatView: View {
             .fullScreenCover(isPresented: $showNewMessageScreen) {
                 NewMessageView(didSelectNewUser: { user in
                     print(user.email)
-                    self.chatUser = user
+                   self.chatUser = user
                 })
             }
+        }
+        
+    }
+    struct ChatLogView: View{
+        var body: some View{
+            ScrollView{
+                ForEach(0..<10) { num in
+                    Text("Fake messages")
+                }
+            }.navigationTitle("Chat log view")
         }
     }
 }

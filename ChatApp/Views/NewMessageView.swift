@@ -22,11 +22,27 @@ struct NewMessageView: View {
             ScrollView{
                 Text(getUsersVm.errorMessage)
                 ForEach(getUsersVm.users) { user in
-                    Button {
-                        //
-//                        ChatsView()
-                        didSelectNewUser(user)
-                        self.shouldNavigateToSendMessageView.toggle()
+//                    Button {
+//                        //
+////                        ChatsView()
+//                        didSelectNewUser(user)
+//                        self.shouldNavigateToSendMessageView.toggle()
+//                    } label: {
+//                        HStack{
+//                            WebImage(url:URL(string: user.profileImageURL))
+//                                .resizable()
+//                                .frame(width: 50, height: 50)
+//                                .clipShape(Circle())
+//                                .overlay(Circle().stroke(Color(.black), lineWidth: 1))
+//
+//                            Text(user.email)
+//                            Spacer()
+//                        }
+//                        .foregroundColor(.black)
+//                        .padding(.horizontal)
+//                    }
+                    NavigationLink {
+                        MessagesChatView()
                     } label: {
                         HStack{
                             WebImage(url:URL(string: user.profileImageURL))
@@ -34,13 +50,14 @@ struct NewMessageView: View {
                                 .frame(width: 50, height: 50)
                                 .clipShape(Circle())
                                 .overlay(Circle().stroke(Color(.black), lineWidth: 1))
-                            
+
                             Text(user.email)
                             Spacer()
                         }
                         .foregroundColor(.black)
                         .padding(.horizontal)
                     }
+
 
                     Divider()
                         .padding(.vertical, 8)

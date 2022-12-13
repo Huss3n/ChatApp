@@ -4,14 +4,15 @@
 //
 //  Created by Muktar Hussein on 07/12/2022.
 //
-
 import SwiftUI
 
 struct UsernameView: View {
+    @ObservedObject var vm = ChatViewModel()
     var body: some View {
         VStack {
                 NavigationLink{
                     Text("Chat history")
+                    Text(vm.chatUser?.email ?? "")
                 }label: {
                     HStack{
                         Image(systemName: "person")
